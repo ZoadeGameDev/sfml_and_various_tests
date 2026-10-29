@@ -15,7 +15,7 @@ public:
 
     void SetPosition(float x,float y);
 
-    void Move();
+    void Move(float deltaTime);
 
 private:
     float wanted_size_;

@@ -5,6 +5,7 @@
 #ifndef SMFL_AND_VARIOUS_TEST_GAME_H
 #define SMFL_AND_VARIOUS_TEST_GAME_H
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include "character.h"
 
 class Game {

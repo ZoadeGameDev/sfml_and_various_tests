@@ -6,8 +6,10 @@
 
 // public
 Character character;
+sf::Clock watch;
 
 void Game::BeginWindow() {
+
     window.create(sf::VideoMode({900, 600}), "Moving Character", sf::Style::Default);
     window.setFramerateLimit(60);
     character.SetPosition(window.getSize().x / 2.f, window.getSize().y / 2.f);
@@ -15,9 +17,10 @@ void Game::BeginWindow() {
 
 void Game::Loop() {
     while (window.isOpen()) {
+        const float dt = watch.restart().asSeconds();
         CheckWindowEvents();
 
-        character.Move();
+        character.Move(dt);
 
         window.clear(sf::Color::Black);
         character.Draw(window);

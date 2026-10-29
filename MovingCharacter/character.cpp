@@ -6,7 +6,7 @@
 
 
 Character::Character() {
-    if (!texture_.loadFromFile("../../Texture/littleguy.png")) {
+    if (!texture_.loadFromFile("../../Assets/PNG/Players/Tilemap/tilemap_packed.png")) {
         std::println("no texture");
     }
     else {
@@ -18,7 +18,8 @@ Character::Character() {
     } else {
         std::println("sprite was found");
     }
-    wanted_size_ = 1.f;
+    wanted_size_ = 4.f;
+    sprite_->setTextureRect(sf::IntRect({0,48}, {24, 24}));
     sprite_->setScale({wanted_size_, wanted_size_});
     sprite_->setOrigin({float(sprite_->getTextureRect().size.x / 2), float(sprite_->getTextureRect().size.y / 2)});
 }
@@ -31,10 +32,10 @@ void Character::SetPosition(float x,float y) {
     sprite_->setPosition({x, y});
 }
 
-void Character::Move() {
+void Character::Move(float deltaTime) {
     float wanted_x = 0;
     float wanted_y = 0;
-    float modifier = 0.1;
+    float modifier = 10 * deltaTime;
 
     const float joystick_x = sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::X);
     if (std::abs(joystick_x) > 20.f) {
