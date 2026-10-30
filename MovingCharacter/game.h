@@ -2,8 +2,8 @@
 // Created by zoade on 29.10.2026.
 //
 
-#ifndef SMFL_AND_VARIOUS_TEST_GAME_H
-#define SMFL_AND_VARIOUS_TEST_GAME_H
+#ifndef SFML_AND_VARIOUS_TEST_GAME_H
+#define SFML_AND_VARIOUS_TEST_GAME_H
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include "character.h"
@@ -17,7 +17,7 @@ public:
     void Loop();
 
 private:
-    void CheckWindowEvents();
+    void CheckEvents();
 
     //void CheckIfWindowClosed(const std::optional<sf::Event> &event);
 
@@ -26,4 +26,4 @@ private:
 };
 
 
-#endif // SMFL_AND_VARIOUS_TEST_GAME_H
+#endif // SFML_AND_VARIOUS_TEST_GAME_H

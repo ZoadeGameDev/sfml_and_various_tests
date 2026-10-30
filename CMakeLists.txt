@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.3)
-project(smfl_and_various_tests)
+project(sfml_and_various_tests)
 
 set(CMAKE_CXX_STANDARD 23)
 

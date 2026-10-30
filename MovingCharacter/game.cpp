@@ -18,9 +18,9 @@ void Game::BeginWindow() {
 void Game::Loop() {
     while (window.isOpen()) {
         const float dt = watch.restart().asSeconds();
-        CheckWindowEvents();
+        CheckEvents();
 
-        character.Move(dt);
+        character.Move(dt); // also take care of inputs
 
         window.clear(sf::Color::Black);
         character.Draw(window);
@@ -31,13 +31,14 @@ void Game::Loop() {
 
 // private
 // This method will grow
-void Game::CheckWindowEvents() {
+void Game::CheckEvents() {
     while (const std::optional event = window.pollEvent()) {
         //CheckIfWindowClosed(event);
         // close window
         if (event -> is<sf::Event::Closed>()) {
             window.close();
         }
+
         // change window dimension
         if (const auto* resized = event->getIf<sf::Event::Resized>()) {
             const sf::Vector2f taille(resized->size);
@@ -45,6 +46,7 @@ void Game::CheckWindowEvents() {
 
         }
 
+        // player inputs
     }
 }
 
