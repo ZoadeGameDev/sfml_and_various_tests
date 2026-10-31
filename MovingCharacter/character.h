@@ -32,8 +32,12 @@ private:
     float anim_time_ = 0.0f;
     int pose_ = 0;
     int wanted_pose_ = pose_;
+
     float transition_time_x_ = 0.f;
     float transition_time_y_ = 0.f;
+    float actual_x_ = 0;
+    float actual_y_ = 0;
+
 };
 
 
